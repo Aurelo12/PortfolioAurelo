@@ -1,0 +1,12 @@
+# Editor settings (PhpStorm / JetBrains, VS Code)
+.idea/
+.vscode/
+
+# OS junk files
+.DS_Store
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.directory
+*~

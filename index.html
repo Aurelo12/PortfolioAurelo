@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sefonic · Minecraft plugins &amp; Tebex stores</title>
+  <meta name="description" content="Sefonic builds Paper plugins and Tebex stores for Minecraft servers. Based in the Netherlands, working with servers anywhere.">
+  <link rel="canonical" href="https://sefonic.github.io/">
+
+  <!-- Link previews (Discord, X, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sefonic">
+  <meta property="og:title" content="Sefonic · Minecraft plugins &amp; Tebex stores">
+  <meta property="og:description" content="Sefonic builds Paper plugins and Tebex stores for Minecraft servers. Based in the Netherlands, working with servers anywhere.">
+  <meta property="og:url" content="https://sefonic.github.io/">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Theme: picked before the page is drawn, so there is no flash of the wrong theme -->
+  <script>
+    (function () {
+      var theme;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&amp;display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- ========== Header ========== -->
+<header class="site-header container">
+  <a class="logo" href="#top">
+    <svg class="logo__mark" aria-hidden="true" width="26" height="28" viewBox="0 0 26 28" fill="none"><path d="M13 2 L24 8 L24 20 L13 26 L2 20 L2 8 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"></path></svg>
+    Sefonic
+  </a>
+
+  <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+    <!-- Moon: shown in light mode -->
+    <svg class="icon-moon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path></svg>
+    <!-- Sun: shown in dark mode -->
+    <svg class="icon-sun" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+  </button>
+
+  <nav class="nav" aria-label="Main">
+    <a class="nav__link" href="#work">Work</a>
+    <a class="nav__link" href="#services">Services</a>
+    <a class="btn btn--primary btn--sm" href="#contact">Message me on Discord</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ========== Hero ========== -->
+  <section id="top" class="hero container">
+    <div class="hero__text">
+      <h1>I build Minecraft plugins and Tebex stores for servers.</h1>
+      <p class="lead">Paper plugins written from scratch, and webstores that look like they belong to your server. Based in the Netherlands, working with servers anywhere.</p>
+      <div class="button-row">
+        <a class="btn btn--primary" href="#work">See my work</a>
+        <a class="btn btn--outline" href="#contact">Ask for a price</a>
+      </div>
+    </div>
+
+    <figure class="hero__media">
+      <div class="video">
+        <span class="video__placeholder">[Video: Aurum Border in action, 15–30 sec, no music needed]</span>
+        <!--
+          To show a YouTube video: delete the <span> above and uncomment the <iframe> below.
+          Replace VIDEO_ID with the part after "v=" in your YouTube link.
+
+        <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Aurum Border in action" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        -->
+      </div>
+      <figcaption class="caption">Aurum Border, an animated gold world border for Paper servers.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ========== Work ========== -->
+  <section id="work" class="surface">
+    <div class="container section work">
+      <h2>Work</h2>
+
+      <!-- Project: Aurum Border -->
+      <article class="project">
+        <div class="placeholder placeholder--wide">
+          <span>[Clip or screenshot: border shrinking around players]</span>
+        </div>
+        <div class="project__text">
+          <p class="label">Plugin + resource pack · Paper</p>
+          <h3>Aurum Border</h3>
+          <p class="muted">A world border that actually looks good. It uses each player's real world border with a custom animated gold hex texture, so there are no seams or floating entities.</p>
+          <ul class="feature-list">
+            <li>Square or circle, movable, adjustable shrink speed</li>
+            <li>Players can walk through it but take damage outside</li>
+            <li>Simple /border commands for staff</li>
+          </ul>
+          <!-- Replace #contact with the BuiltByBit page URL -->
+          <a class="text-link" href="#contact">[Link: BuiltByBit page]</a>
+        </div>
+      </article>
+
+      <!-- Tebex stores -->
+      <div class="stores">
+        <div class="stores__head">
+          <h3>Tebex stores</h3>
+          <p>Store themes set up and styled for real servers.</p>
+        </div>
+        <div class="stores__grid">
+          <figure class="store">
+            <img src="assets/miscmc-store.png" alt="Tebex credits store for MiscMC with five credit packages" width="1536" height="706" loading="lazy" decoding="async">
+            <figcaption>MiscMC credits store</figcaption>
+          </figure>
+          <figure class="store">
+            <div class="placeholder placeholder--store"><span>[Store screenshot]</span></div>
+            <figcaption>[Server name]</figcaption>
+          </figure>
+          <figure class="store">
+            <div class="placeholder placeholder--store"><span>[Store screenshot]</span></div>
+            <figcaption>[Server name]</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Services ========== -->
+  <section id="services" class="container section services">
+    <h2>What I can do for your server</h2>
+    <div class="services__grid">
+      <div class="service">
+        <h3>Custom plugins</h3>
+        <p>Game modes, borders, events, commands. You explain the idea, I build it for Paper.</p>
+        <p class="price">From [€ PRICE]</p>
+      </div>
+      <div class="service">
+        <h3>Tebex store setup</h3>
+        <p>Packages, categories and a theme in your server's colors and logo.</p>
+        <p class="price">From [€ PRICE]</p>
+      </div>
+      <div class="service">
+        <h3>Fixes and updates</h3>
+        <p>A plugin broke after an update, or needs one more feature? I can take a look.</p>
+        <p class="price">From [€ PRICE]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Process ========== -->
+  <section id="process" class="band">
+    <div class="container section process">
+      <h2>How a job goes</h2>
+      <ol class="steps">
+        <li class="step">
+          <span class="step__number">1</span>
+          <span class="step__title">You tell me the idea</span>
+          <span class="step__text">On Discord, as rough as you like.</span>
+        </li>
+        <li class="step">
+          <span class="step__number">2</span>
+          <span class="step__title">You get a plan and a price</span>
+          <span class="step__text">Before I start, so there are no surprises.</span>
+        </li>
+        <li class="step">
+          <span class="step__number">3</span>
+          <span class="step__title">You see clips while I build</span>
+          <span class="step__text">Short videos from my test server.</span>
+        </li>
+        <li class="step">
+          <span class="step__number">4</span>
+          <span class="step__title">Delivery and support</span>
+          <span class="step__text">[What you include after delivery]</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ========== Reviews ========== -->
+  <section id="reviews" class="container section reviews">
+    <h2>What server owners said</h2>
+    <div class="reviews__grid">
+      <figure class="review">
+        <blockquote>
+          <p>“Insane quality and very fast response times. Need a custom tebex store?, I would highly recommend them!”</p>
+        </blockquote>
+        <figcaption>acadia__, server owner · 5/5 for a webstore</figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote>
+          <p>“[Quote from a server owner you worked for]”</p>
+        </blockquote>
+        <figcaption>[Name], [Server name]</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ========== Contact ========== -->
+  <section id="contact" class="surface">
+    <div class="container section contact">
+      <div class="contact__text">
+        <h2>Got an idea for your server?</h2>
+        <p>Send me a message with what you want. I usually reply within [TIME].</p>
+      </div>
+      <div class="contact__links">
+        <!-- Clicking this copies the Discord username (see script.js). Change the name inside the <span>. -->
+        <a class="btn btn--primary btn--lg" href="#contact" data-copy-discord>Discord: <span class="discord-name">[USERNAME]</span></a>
+        <!-- Replace #contact with your BuiltByBit profile URL -->
+        <a class="btn btn--outline btn--lg" href="#contact">BuiltByBit: [PROFILE LINK]</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========== Footer ========== -->
+<footer class="site-footer container">
+  <span>Sefonic · Minecraft plugin developer</span>
+  <span>Not affiliated with Mojang or Microsoft.</span>
+</footer>
+
+</body>
+</html>
