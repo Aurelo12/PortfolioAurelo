@@ -9,7 +9,7 @@
 :root {
   color-scheme: light;
 
-  --color-bg: #EEF0F2;            /* page background */
+  --color-bg: #DFE4EA;            /* page background (grey, so the white sections stand out) */
   --color-surface: #FFFFFF;       /* white sections (Work, Contact) */
   --color-text: #15181D;          /* headings, text, links */
   --color-text-muted: #3E4650;    /* paragraphs */
@@ -18,7 +18,7 @@
   --color-chip: #E3E6EA;          /* small grey label (review service) */
   --color-button-bg: #15181D;     /* filled buttons */
   --color-button-text: #FFFFFF;
-  --color-toggle-border: #C4CAD1; /* theme toggle outline */
+  --color-toggle-border: #AEB6C0; /* theme toggle outline */
   --color-accent: #D4A12A;        /* gold */
   --color-online: #2F9E5B;        /* "Available now" dot */
 
