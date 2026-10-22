@@ -1,30 +1,22 @@
-/* =========================================================
-   Aurelo · styles
-   All colors live in the two blocks below:
-   :root is the light theme, [data-theme="dark"] the dark theme.
-   ========================================================= */
-
-
-/* ---------- Colors and fonts: light theme ---------- */
+/* Light theme */
 :root {
   color-scheme: light;
 
-  --color-bg: #DFE4EA;            /* page background (grey, so the white sections stand out) */
-  --color-surface: #FFFFFF;       /* white sections (Work, Contact) */
-  --color-text: #15181D;          /* headings, text, links */
-  --color-text-muted: #3E4650;    /* paragraphs */
-  --color-text-subtle: #4D5560;   /* captions, labels, link hover */
-  --color-line: #15181D;          /* outline buttons, divider line */
-  --color-chip: #E3E6EA;          /* small grey label (review service) */
-  --color-button-bg: #15181D;     /* filled buttons */
+  --color-bg: #DFE4EA;
+  --color-surface: #FFFFFF;
+  --color-text: #15181D;
+  --color-text-muted: #3E4650;
+  --color-text-subtle: #4D5560;
+  --color-line: #15181D;
+  --color-chip: #E3E6EA;
+  --color-button-bg: #15181D;
   --color-button-text: #FFFFFF;
-  --color-toggle-border: #AEB6C0; /* theme toggle outline */
-  --color-accent: #D4A12A;        /* gold */
-  --color-online: #2F9E5B;        /* "Available now" dot */
+  --color-toggle-border: #AEB6C0;
+  --color-accent: #D4A12A;
+  --color-online: #2F9E5B;
 
-  /* Dark band ("How a job goes") and the hero video frame */
   --color-band-bg: #15181D;
-  --color-band-edge: #15181D;     /* thin line above and below the band */
+  --color-band-edge: #15181D;
   --color-band-text: #FFFFFF;
   --color-band-muted: #C9CED5;
 
@@ -32,8 +24,7 @@
   --page-width: 1160px;
 }
 
-
-/* ---------- Colors: dark theme ---------- */
+/* Dark theme */
 :root[data-theme="dark"] {
   color-scheme: dark;
 
@@ -56,8 +47,7 @@
   --color-band-muted: #C9CED5;
 }
 
-
-/* ---------- Base ---------- */
+/* Base */
 *,
 *::before,
 *::after {
@@ -111,8 +101,7 @@ h2 {
   font-stretch: 85%;
 }
 
-
-/* ---------- Layout helpers ---------- */
+/* Layout helpers */
 .container {
   max-width: var(--page-width);
   margin: 0 auto;
@@ -133,8 +122,7 @@ h2 {
   color: var(--color-text-muted);
 }
 
-
-/* ---------- Buttons ---------- */
+/* Buttons */
 .btn {
   display: inline-block;
   padding: 14px 20px;
@@ -161,8 +149,7 @@ h2 {
   border: 1.5px solid var(--color-line);
 }
 
-
-/* ---------- Header ---------- */
+/* Header */
 .site-header {
   display: flex;
   flex-wrap: wrap;
@@ -183,7 +170,6 @@ h2 {
   text-decoration: none;
 }
 
-/* Round profile picture (header and contact) */
 .avatar {
   display: block;
   flex-shrink: 0;
@@ -214,10 +200,9 @@ h2 {
   text-decoration: none;
 }
 
-/* Light/dark toggle. Hidden until the theme script in <head> has run. */
 .theme-toggle {
   display: none;
-  order: 1; /* sits after the nav on wide screens */
+  order: 1;
   align-items: center;
   justify-content: center;
   width: 44px;
@@ -247,8 +232,7 @@ h2 {
   display: block;
 }
 
-
-/* ---------- Hero ---------- */
+/* Hero */
 .hero {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
@@ -307,8 +291,7 @@ h2 {
   color: var(--color-text-subtle);
 }
 
-
-/* ---------- Work ---------- */
+/* Work */
 .work {
   display: flex;
   flex-direction: column;
@@ -362,9 +345,7 @@ h2 {
   font-weight: 600;
 }
 
-
-
-/* ---------- Services ---------- */
+/* Services */
 .services {
   display: flex;
   flex-direction: column;
@@ -399,12 +380,11 @@ h2 {
 }
 
 .services__note {
-  margin-top: -24px; /* sits close under the price grid */
+  margin-top: -24px;
   color: var(--color-text-subtle);
 }
 
-
-/* ---------- Process ("How a job goes") ---------- */
+/* Process */
 .band {
   color: var(--color-band-text);
   background: var(--color-band-bg);
@@ -450,15 +430,13 @@ h2 {
   color: var(--color-band-muted);
 }
 
-
-/* ---------- Reviews ---------- */
+/* Reviews */
 .reviews {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-/* One featured review */
 .review-card {
   display: flex;
   flex-direction: column;
@@ -508,7 +486,7 @@ h2 {
   border-radius: 999px;
 }
 
-/* ---------- Contact ---------- */
+/* Contact */
 .contact {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
@@ -532,7 +510,6 @@ h2 {
   color: var(--color-text-muted);
 }
 
-/* Avatar next to the message */
 .contact__me {
   display: flex;
   align-items: flex-start;
@@ -549,7 +526,6 @@ h2 {
   color: var(--color-text);
 }
 
-/* Online hours, filled in by script.js */
 .availability {
   display: flex;
   flex-direction: column;
@@ -574,7 +550,7 @@ h2 {
   flex-shrink: 0;
   width: 8px;
   height: 8px;
-  margin-top: calc((1.55em - 8px) / 2); /* centred on the first line, also when the text wraps */
+  margin-top: calc((1.55em - 8px) / 2);
   border-radius: 50%;
   background: var(--color-text-subtle);
 }
@@ -589,8 +565,7 @@ h2 {
   gap: 12px;
 }
 
-
-/* ---------- Footer ---------- */
+/* Footer */
 .site-footer {
   display: flex;
   flex-wrap: wrap;
@@ -602,10 +577,9 @@ h2 {
   color: var(--color-text-subtle);
 }
 
-
-/* ---------- Small screens ---------- */
+/* Small screens */
 @media (max-width: 719px) {
-  /* Toggle moves up next to the logo, menu gets its own row */
+
   .theme-toggle {
     order: 0;
   }

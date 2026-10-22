@@ -1,11 +1,4 @@
-/* =========================================================
-   Aurelo · scripts
-   Plain JavaScript, no libraries. The theme is first set by
-   the small script in the <head> of index.html.
-   ========================================================= */
-
-
-/* ---------- Light/dark toggle ---------- */
+/* Theme toggle */
 (function () {
   const root = document.documentElement;
   const toggle = document.querySelector('.theme-toggle');
@@ -15,7 +8,7 @@
     try {
       return localStorage.getItem('theme');
     } catch (e) {
-      return null; // storage blocked, e.g. some private windows
+      return null;
     }
   }
 
@@ -35,19 +28,15 @@
     applyTheme(theme);
     try {
       localStorage.setItem('theme', theme);
-    } catch (e) {
-      // not saved, the toggle still works for this visit
-    }
+    } catch (e) {}
   });
 
-  // Follow the system setting until the visitor picks a theme themselves
   systemDark.addEventListener('change', function (event) {
     if (!savedTheme()) applyTheme(event.matches ? 'dark' : 'light');
   });
 })();
 
-
-/* ---------- Hero video: no autoplay for visitors who ask for less motion ---------- */
+/* Hero video */
 (function () {
   const video = document.querySelector('.hero-shot__video');
   if (!video) return;
@@ -59,7 +48,7 @@
       video.controls = true;
     } else {
       video.controls = false;
-      video.play().catch(function () {}); // the browser may still block it; the poster stays then
+      video.play().catch(function () {});
     }
   }
 
@@ -67,13 +56,11 @@
   reduceMotion.addEventListener('change', apply);
 })();
 
-
-/* ---------- Contact: online hours in the visitor's own time ---------- */
+/* Online hours */
 (function () {
-  // Your hours, in your own time zone. Also change the text in index.html if you change these.
   const MY_TIME_ZONE = 'Europe/Amsterdam';
-  const START_HOUR = 10; // online from 10:00
-  const END_HOUR = 24;   // until 00:00 (midnight)
+  const START_HOUR = 10;
+  const END_HOUR = 24;
 
   const box = document.querySelector('.availability');
   if (!box || !window.Intl) return;
@@ -88,21 +75,18 @@
   });
   const theirClock = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' });
 
-  // Date and time on my clock at a given moment
   function myParts(date) {
     const parts = {};
     myClock.formatToParts(date).forEach(function (p) { parts[p.type] = Number(p.value); });
     return parts;
   }
 
-  // How far my clock is ahead of UTC at a given moment, in ms
   function myOffset(date) {
     const p = myParts(date);
     const minute = Math.floor(date.getTime() / 60000) * 60000;
     return Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute) - minute;
   }
 
-  // The moment my clock shows `hour`:00 on the given day (handles summer/winter time)
   function myMoment(year, month, day, hour) {
     const wall = Date.UTC(year, month - 1, day, hour);
     const guess = wall - myOffset(new Date(wall));
@@ -151,9 +135,7 @@
   setInterval(update, 30000);
 })();
 
-
-/* ---------- Contact: copy Discord username ---------- */
-// Discord has no profile links by username, so the button copies the name instead.
+/* Discord copy button */
 (function () {
   const button = document.querySelector('[data-copy-discord]');
   if (!button || !navigator.clipboard) return;
