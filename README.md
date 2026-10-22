@@ -1,7 +1,7 @@
-# sefonic.github.io
+# aurelo12.github.io
 
 Portfolio site for Aurelo: Minecraft plugins and Tebex stores.
-Live at https://sefonic.github.io
+Live at https://aurelo12.github.io
 
 Plain HTML, CSS and JavaScript. No build step, no npm.
 

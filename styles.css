@@ -15,7 +15,7 @@
   --color-text-muted: #3E4650;    /* paragraphs */
   --color-text-subtle: #4D5560;   /* captions, labels, link hover */
   --color-line: #15181D;          /* outline buttons, divider line */
-  --color-placeholder: #E3E6EA;   /* grey placeholder boxes */
+  --color-chip: #E3E6EA;          /* small grey label (review service) */
   --color-button-bg: #15181D;     /* filled buttons */
   --color-button-text: #FFFFFF;
   --color-toggle-border: #C4CAD1; /* theme toggle outline */
@@ -43,7 +43,7 @@
   --color-text-muted: #BAC1CA;
   --color-text-subtle: #9BA4AF;
   --color-line: #E6E9ED;
-  --color-placeholder: #2C323C;
+  --color-chip: #2C323C;
   --color-button-bg: #E6E9ED;
   --color-button-text: #15181D;
   --color-toggle-border: #3B434E;
@@ -183,9 +183,23 @@ h2 {
   text-decoration: none;
 }
 
-.logo__mark {
+/* Round profile picture (header and contact) */
+.avatar {
+  display: block;
   flex-shrink: 0;
-  color: var(--color-accent);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.avatar--sm {
+  width: 32px;
+  height: 32px;
+}
+
+.avatar--lg {
+  width: 64px;
+  height: 64px;
 }
 
 .nav {
@@ -314,8 +328,7 @@ h2 {
   gap: 14px;
 }
 
-.project h3,
-.stores h3 {
+.project h3 {
   font-size: 30px;
   font-weight: 800;
   font-stretch: 90%;
@@ -349,67 +362,6 @@ h2 {
   font-weight: 600;
 }
 
-/* Grey boxes that hold a [placeholder] until a real image is added */
-.placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  font-size: 15px;
-  text-align: center;
-  color: var(--color-text-subtle);
-  background: var(--color-placeholder);
-  border-radius: 4px;
-}
-
-.placeholder--store {
-  aspect-ratio: 4 / 3;
-  padding: 16px;
-}
-
-.stores {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.stores__head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.stores__head p {
-  color: var(--color-text-subtle);
-}
-
-.stores__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
-  gap: 24px;
-}
-
-.store {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.store img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 4px;
-}
-
-.store figcaption {
-  font-weight: 600;
-}
 
 
 /* ---------- Services ---------- */
@@ -444,6 +396,11 @@ h2 {
 .service .price {
   font-weight: 700;
   color: var(--color-text);
+}
+
+.services__note {
+  margin-top: -24px; /* sits close under the price grid */
+  color: var(--color-text-subtle);
 }
 
 
@@ -501,28 +458,55 @@ h2 {
   gap: 32px;
 }
 
-.reviews__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: 32px;
-}
-
-.review {
+/* One featured review */
+.review-card {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
+  max-width: 820px;
+  padding: 36px 40px;
+  background: var(--color-surface);
+  border-radius: 8px;
 }
 
-.review blockquote p {
-  font-size: 21px;
-  line-height: 1.45;
-}
-
-.review figcaption {
-  font-weight: 600;
+.review-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
   color: var(--color-text-subtle);
 }
 
+.stars {
+  display: block;
+  color: var(--color-accent);
+}
+
+.review-card blockquote p {
+  font-size: 28px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.review-card figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-card__name {
+  font-weight: 600;
+}
+
+.review-card__service {
+  padding: 2px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-chip);
+  border-radius: 999px;
+}
 
 /* ---------- Contact ---------- */
 .contact {
@@ -548,6 +532,23 @@ h2 {
   color: var(--color-text-muted);
 }
 
+/* Avatar next to the message */
+.contact__me {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact__message {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact__message strong {
+  color: var(--color-text);
+}
+
 /* Online hours, filled in by script.js */
 .availability {
   display: flex;
@@ -559,7 +560,7 @@ h2 {
 
 .availability__status {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   font-weight: 600;
   color: var(--color-text);
@@ -573,6 +574,7 @@ h2 {
   flex-shrink: 0;
   width: 8px;
   height: 8px;
+  margin-top: calc((1.55em - 8px) / 2); /* centred on the first line, also when the text wraps */
   border-radius: 50%;
   background: var(--color-text-subtle);
 }
@@ -616,5 +618,18 @@ h2 {
 @media (max-width: 600px) {
   h1 {
     font-size: 44px;
+  }
+
+  .review-card {
+    padding: 24px;
+  }
+
+  .review-card blockquote p {
+    font-size: 22px;
+  }
+
+  .avatar--lg {
+    width: 52px;
+    height: 52px;
   }
 }
