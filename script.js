@@ -1,5 +1,5 @@
 /* =========================================================
-   Sefonic · scripts
+   Aurelo · scripts
    Plain JavaScript, no libraries. The theme is first set by
    the small script in the <head> of index.html.
    ========================================================= */

@@ -1,6 +1,6 @@
 # sefonic.github.io
 
-Portfolio site for Sefonic: Minecraft plugins and Tebex stores.
+Portfolio site for Aurelo: Minecraft plugins and Tebex stores.
 Live at https://sefonic.github.io
 
 Plain HTML, CSS and JavaScript. No build step, no npm.
@@ -19,7 +19,7 @@ Plain HTML, CSS and JavaScript. No build step, no npm.
 
 - Change text in `index.html`. Anything in `[brackets]` is still a placeholder.
 - Change colors in the two blocks at the top of `styles.css`.
-- To add the Aurum Border screenshot, follow the comment in the hero section of `index.html`.
+- To add the AurumBorder screenshot, follow the comment in the hero section of `index.html`.
 - Online hours (10:00–00:00 Dutch time) are set at the top of the hours part of `script.js`. Visitors see them in their own time.
 - To preview, open `index.html` in a browser.
 
