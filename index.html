@@ -72,13 +72,13 @@
     </div>
 
     <figure class="hero__media">
-      <div class="video">
-        <span class="video__placeholder">[Video: Aurum Border in action, 15–30 sec, no music needed]</span>
+      <div class="hero-shot">
+        <span class="hero-shot__placeholder">[Screenshot: Aurum Border in game]</span>
         <!--
-          To show a YouTube video: delete the <span> above and uncomment the <iframe> below.
-          Replace VIDEO_ID with the part after "v=" in your YouTube link.
+          To show your screenshot: put it in the assets folder, delete the <span> above
+          and use this line instead (change the file name to yours):
 
-        <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Aurum Border in action" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <img src="assets/aurum-border.png" alt="Aurum Border, a gold hex world border around players">
         -->
       </div>
       <figcaption class="caption">Aurum Border, an animated gold world border for Paper servers.</figcaption>
@@ -93,7 +93,7 @@
       <!-- Project: Aurum Border -->
       <article class="project">
         <div class="placeholder placeholder--wide">
-          <span>[Clip or screenshot: border shrinking around players]</span>
+          <span>[Screenshot: border around players]</span>
         </div>
         <div class="project__text">
           <p class="label">Plugin + resource pack · Paper</p>
@@ -172,8 +172,8 @@
         </li>
         <li class="step">
           <span class="step__number">3</span>
-          <span class="step__title">You see clips while I build</span>
-          <span class="step__text">Short videos from my test server.</span>
+          <span class="step__title">You see progress while I build</span>
+          <span class="step__text">Screenshots from my test server.</span>
         </li>
         <li class="step">
           <span class="step__number">4</span>
@@ -208,7 +208,13 @@
     <div class="container section contact">
       <div class="contact__text">
         <h2>Got an idea for your server?</h2>
-        <p>Send me a message with what you want. I usually reply within [TIME].</p>
+        <p>Send me a message with what you want. I usually reply within 2 hours.</p>
+        <!-- Online hours. script.js shows the visitor these hours in their own time.
+             If your hours change, change them here and at the top of the hours part in script.js. -->
+        <div class="availability">
+          <p class="availability__status" hidden><span class="status-dot" aria-hidden="true"></span><span data-status></span></p>
+          <p data-hours>I'm online 10:00–00:00, Dutch time.</p>
+        </div>
       </div>
       <div class="contact__links">
         <!-- Clicking this copies the Discord username (see script.js). Change the name inside the <span>. -->

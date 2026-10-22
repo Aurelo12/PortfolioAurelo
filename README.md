@@ -11,7 +11,7 @@ Plain HTML, CSS and JavaScript. No build step, no npm.
 | --- | --- |
 | `index.html` | All text and content. Each section is marked with a comment. |
 | `styles.css` | All styling. Colors are at the top: `:root` for light, `[data-theme="dark"]` for dark. |
-| `script.js` | Light/dark toggle and the Discord copy button. |
+| `script.js` | Light/dark toggle, online hours in the visitor's time, and the Discord copy button. |
 | `assets/` | Images. |
 | `favicon.svg` | Browser tab icon. |
 
@@ -19,7 +19,8 @@ Plain HTML, CSS and JavaScript. No build step, no npm.
 
 - Change text in `index.html`. Anything in `[brackets]` is still a placeholder.
 - Change colors in the two blocks at the top of `styles.css`.
-- To add the YouTube video, follow the comment in the hero section of `index.html`.
+- To add the Aurum Border screenshot, follow the comment in the hero section of `index.html`.
+- Online hours (10:00–00:00 Dutch time) are set at the top of the hours part of `script.js`. Visitors see them in their own time.
 - To preview, open `index.html` in a browser.
 
 ## Publishing
