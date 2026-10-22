@@ -1,7 +1,7 @@
-# aurelo12.github.io
+# PortfolioAurelo
 
 Portfolio site for Aurelo: Minecraft plugins and Tebex stores.
-Live at https://aurelo12.github.io
+Live at https://aurelo12.github.io/PortfolioAurelo/
 
 Plain HTML, CSS and JavaScript. No build step, no npm.
 
