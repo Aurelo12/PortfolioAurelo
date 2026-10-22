@@ -47,6 +47,27 @@
 })();
 
 
+/* ---------- Hero video: no autoplay for visitors who ask for less motion ---------- */
+(function () {
+  const video = document.querySelector('.hero-shot__video');
+  if (!video) return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function apply() {
+    if (reduceMotion.matches) {
+      video.pause();
+      video.controls = true;
+    } else {
+      video.controls = false;
+      video.play().catch(function () {}); // the browser may still block it; the poster stays then
+    }
+  }
+
+  apply();
+  reduceMotion.addEventListener('change', apply);
+})();
+
+
 /* ---------- Contact: online hours in the visitor's own time ---------- */
 (function () {
   // Your hours, in your own time zone. Also change the text in index.html if you change these.

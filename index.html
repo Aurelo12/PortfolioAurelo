@@ -73,13 +73,12 @@
 
     <figure class="hero__media">
       <div class="hero-shot">
-        <span class="hero-shot__placeholder">[Screenshot: AurumBorder in game]</span>
-        <!--
-          To show your screenshot: put it in the assets folder, delete the <span> above
-          and use this line instead (change the file name to yours):
-
-        <img src="assets/aurumborder.png" alt="AurumBorder, a gold hex world border around players">
-        -->
+        <!-- Silent 25 s loop. Visitors who prefer reduced motion get a paused video with controls (script.js). -->
+        <video class="hero-shot__video" autoplay muted loop playsinline preload="metadata"
+               poster="assets/aurumborder-poster.jpg"
+               aria-label="AurumBorder in game: the gold hex border shrinks around players, and a player walks out through it and takes damage">
+          <source src="assets/aurumborder.mp4" type="video/mp4">
+        </video>
       </div>
       <figcaption class="caption">AurumBorder, an animated gold world border for Paper servers.</figcaption>
     </figure>
@@ -92,9 +91,7 @@
 
       <!-- Project: AurumBorder -->
       <article class="project">
-        <div class="placeholder placeholder--wide">
-          <span>[Screenshot: border around players]</span>
-        </div>
+        <img class="project__image" src="assets/aurumborder.jpg" alt="A player standing just outside the gold hex border at sunset, flashing red from border damage" width="1600" height="900" loading="lazy" decoding="async">
         <div class="project__text">
           <p class="label">Plugin + resource pack · Paper</p>
           <h3>AurumBorder</h3>

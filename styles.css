@@ -22,12 +22,11 @@
   --color-accent: #D4A12A;        /* gold */
   --color-online: #2F9E5B;        /* "Available now" dot */
 
-  /* Dark band ("How a job goes") and the hero picture frame */
+  /* Dark band ("How a job goes") and the hero video frame */
   --color-band-bg: #15181D;
   --color-band-edge: #15181D;     /* thin line above and below the band */
   --color-band-text: #FFFFFF;
   --color-band-muted: #C9CED5;
-  --color-frame-text: #D8DCE1;
 
   --font: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
   --page-width: 1160px;
@@ -55,7 +54,6 @@
   --color-band-edge: #2C323C;
   --color-band-text: #FFFFFF;
   --color-band-muted: #C9CED5;
-  --color-frame-text: #D8DCE1;
 }
 
 
@@ -282,13 +280,7 @@ h2 {
   border-radius: 4px;
 }
 
-.hero-shot__placeholder {
-  font-size: 16px;
-  text-align: center;
-  color: var(--color-frame-text);
-}
-
-.hero-shot img {
+.hero-shot__video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -343,6 +335,15 @@ h2 {
   color: var(--color-text-muted);
 }
 
+.project__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
 .text-link {
   align-self: flex-start;
   font-weight: 600;
@@ -359,10 +360,6 @@ h2 {
   color: var(--color-text-subtle);
   background: var(--color-placeholder);
   border-radius: 4px;
-}
-
-.placeholder--wide {
-  aspect-ratio: 16 / 10;
 }
 
 .placeholder--store {
