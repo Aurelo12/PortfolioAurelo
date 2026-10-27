@@ -1,4 +1,3 @@
-/* Theme toggle */
 (function () {
   const root = document.documentElement;
   const toggle = document.querySelector('.theme-toggle');
@@ -36,9 +35,8 @@
   });
 })();
 
-/* Hero video */
 (function () {
-  const video = document.querySelector('.hero-shot__video');
+  const video = document.querySelector('.hero-video');
   if (!video) return;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -56,7 +54,6 @@
   reduceMotion.addEventListener('change', apply);
 })();
 
-/* Online hours */
 (function () {
   const MY_TIME_ZONE = 'Europe/Amsterdam';
   const START_HOUR = 10;
@@ -65,9 +62,9 @@
   const box = document.querySelector('.availability');
   if (!box || !window.Intl) return;
 
-  const statusLine = box.querySelector('.availability__status');
-  const statusText = box.querySelector('[data-status]');
-  const hoursText = box.querySelector('[data-hours]');
+  const statusLine = box.querySelector('.status-line');
+  const statusText = box.querySelector('.status-text');
+  const hoursText = box.querySelector('.hours-text');
 
   const myClock = new Intl.DateTimeFormat('en-GB', {
     timeZone: MY_TIME_ZONE, year: 'numeric', month: 'numeric', day: 'numeric',
@@ -135,20 +132,19 @@
   setInterval(update, 30000);
 })();
 
-/* Discord copy button */
 (function () {
-  const button = document.querySelector('[data-copy-discord]');
+  const button = document.querySelector('.discord-btn');
   if (!button || !navigator.clipboard) return;
 
   const name = button.querySelector('.discord-name').textContent.trim();
-  const originalText = button.textContent;
+  const originalHTML = button.innerHTML;
 
   button.addEventListener('click', function (event) {
     event.preventDefault();
     navigator.clipboard.writeText(name).then(function () {
       button.textContent = 'Copied: ' + name;
       setTimeout(function () {
-        button.textContent = originalText;
+        button.innerHTML = originalHTML;
       }, 2000);
     });
   });

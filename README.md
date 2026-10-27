@@ -9,7 +9,7 @@ Plain HTML, CSS and JavaScript. No build step, no npm.
 
 | File | What it is |
 | --- | --- |
-| `index.html` | All text and content. Each section is marked with a comment. |
+| `index.html` | All text and content. |
 | `styles.css` | All styling. Colors are at the top: `:root` for light, `[data-theme="dark"]` for dark. |
 | `script.js` | Light/dark toggle, online hours in the visitor's time, and the Discord copy button. |
 | `assets/` | Images. |
@@ -21,7 +21,7 @@ Plain HTML, CSS and JavaScript. No build step, no npm.
 - Change colors in the two blocks at the top of `styles.css`.
 - The hero video is `assets/aurumborder.mp4` (720p, no sound) with `assets/aurumborder-poster.jpg` as its first frame.
   To swap it, replace both files and keep the names.
-- Online hours (10:00–00:00 Dutch time) are set at the top of the hours part of `script.js`. Visitors see them in their own time.
+- Online hours (10:00–00:00 CET) are set at the top of the hours part of `script.js`. Visitors see them in their own time.
 - To preview, open `index.html` in a browser.
 
 ## Publishing
